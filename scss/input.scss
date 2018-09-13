@@ -45,12 +45,21 @@ color: $fontBlack;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   height: 40px;
+  top: 0;
   i{
     padding: 10px;
     color: lighten($fontBlack, 50%);
     font-size: 1.4rem;
   }
+}
+
+.progress {
+  position: relative;
+  width: 50%;
+  height: 20px;
+  margin-left: 300px;
 }
 
 a {
@@ -78,7 +87,7 @@ i {
 }
 
 #learnTitleStyle {
-  margin-top: 20px;
+  margin-top: 70px;
   font-size: 3em;
   font-weight: bold;
 }
@@ -140,6 +149,7 @@ i {
   }
 }
 
+
 #toggle{
   position: absolute;
   appearance: none;
@@ -178,7 +188,7 @@ label i {
 #toggle:checked + label{
   left: -35px;
 }
-#toggle::not(:checked) ~ .lessonContentWrapper{
+#toggle:not(:checked) ~ .lessonContentWrapper{
   margin-left: 300px;
 }
 
@@ -243,17 +253,20 @@ width: 225px;
 
 .lessonContent {
   background-color: white;
-  max-width: 600px;
+  max-width: 800px;
   height: 100%;
   margin-top: 50px;
-  // div {
-  // display: none;
-  // }
+  div {
+  display: none;
+  padding: 40px 30px;
+
+  }
 }
 
 .lessonContentWrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
-
+  margin-left: 0px;
+  transition: margin-left 500ms ease;
 }

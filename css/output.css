@@ -10,12 +10,21 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   height: 40px;
+  top: 0;
 }
 .navBar i {
   padding: 10px;
   color: #c8c8c8;
   font-size: 1.4rem;
+}
+
+.progress {
+  position: relative;
+  width: 50%;
+  height: 20px;
+  margin-left: 300px;
 }
 
 a {
@@ -43,7 +52,7 @@ i {
 }
 
 #learnTitleStyle {
-  margin-top: 20px;
+  margin-top: 70px;
   font-size: 3em;
   font-weight: bold;
 }
@@ -264,7 +273,7 @@ label i {
   left: -35px;
 }
 
-#toggle::not(:checked) ~ .lessonContentWrapper {
+#toggle:not(:checked) ~ .lessonContentWrapper {
   margin-left: 300px;
 }
 
@@ -324,15 +333,21 @@ label i {
 
 .lessonContent {
   background-color: white;
-  max-width: 600px;
+  max-width: 800px;
   height: 100%;
   margin-top: 50px;
+}
+.lessonContent div {
+  display: none;
+  padding: 40px 30px;
 }
 
 .lessonContentWrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-left: 0px;
+  transition: margin-left 500ms ease;
 }
 
 /*# sourceMappingURL=output.css.map */
