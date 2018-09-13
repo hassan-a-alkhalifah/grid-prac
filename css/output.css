@@ -1,0 +1,338 @@
+body {
+  background-color: #F5F5F5;
+  color: #484848;
+}
+
+.navBar {
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 40px;
+}
+.navBar i {
+  padding: 10px;
+  color: #c8c8c8;
+  font-size: 1.4rem;
+}
+
+a {
+  color: #484848;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #959595;
+}
+
+button {
+  border: 1px solid #EEE8E8;
+  background-image: linear-gradient(#FFF9F9, #E6E5E5);
+}
+
+i {
+  color: white;
+  margin: 0 6px;
+}
+
+.contentWrapper {
+  max-width: 810px;
+  margin: 0px auto;
+}
+
+#learnTitleStyle {
+  margin-top: 20px;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.trackCards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.trackCards .purple {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  height: 150px;
+  width: 250px;
+  margin: 10px 10px;
+}
+.trackCards .purple > div:first-child {
+  padding: 5px;
+  width: 100%;
+  background-color: #D6D3FF;
+  font-weight: bold;
+}
+.trackCards .purple > div:nth-child(2) {
+  padding: 10px;
+}
+.trackCards .purple > div:nth-child(3) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+.trackCards .purple > div:nth-child(3) > div:last-child {
+  font-weight: bold;
+}
+.trackCards .lightGreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  height: 150px;
+  width: 250px;
+  margin: 10px 10px;
+}
+.trackCards .lightGreen > div:first-child {
+  padding: 5px;
+  width: 100%;
+  background-color: #D0FFD5;
+  font-weight: bold;
+}
+.trackCards .lightGreen > div:nth-child(2) {
+  padding: 10px;
+}
+.trackCards .lightGreen > div:nth-child(3) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+.trackCards .lightGreen > div:nth-child(3) > div:last-child {
+  font-weight: bold;
+}
+.trackCards .darkGreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  height: 150px;
+  width: 250px;
+  margin: 10px 10px;
+}
+.trackCards .darkGreen > div:first-child {
+  padding: 5px;
+  width: 100%;
+  background-color: #74B29A;
+  font-weight: bold;
+}
+.trackCards .darkGreen > div:nth-child(2) {
+  padding: 10px;
+}
+.trackCards .darkGreen > div:nth-child(3) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+.trackCards .darkGreen > div:nth-child(3) > div:last-child {
+  font-weight: bold;
+}
+.trackCards .lightBrown {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  height: 150px;
+  width: 250px;
+  margin: 10px 10px;
+}
+.trackCards .lightBrown > div:first-child {
+  padding: 5px;
+  width: 100%;
+  background-color: #C7BBA5;
+  font-weight: bold;
+}
+.trackCards .lightBrown > div:nth-child(2) {
+  padding: 10px;
+}
+.trackCards .lightBrown > div:nth-child(3) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+.trackCards .lightBrown > div:nth-child(3) > div:last-child {
+  font-weight: bold;
+}
+.trackCards .darkBrown {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  height: 150px;
+  width: 250px;
+  margin: 10px 10px;
+}
+.trackCards .darkBrown > div:first-child {
+  padding: 5px;
+  width: 100%;
+  background-color: #B19C87;
+  font-weight: bold;
+}
+.trackCards .darkBrown > div:nth-child(2) {
+  padding: 10px;
+}
+.trackCards .darkBrown > div:nth-child(3) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+.trackCards .darkBrown > div:nth-child(3) > div:last-child {
+  font-weight: bold;
+}
+
+.subheading {
+  display: inline-block;
+  margin: 10px;
+  margin-top: 30px;
+}
+
+.sideBarWrapper {
+  position: relative;
+  top: 100%;
+  left: 0px;
+  transition: left 500ms ease;
+  position: fixed;
+  top: 40px;
+  height: 100%;
+  width: 300px;
+  z-index: 1;
+}
+
+.navSideBar {
+  background-color: white;
+  width: 300px;
+  height: 100%;
+  z-index: 1;
+  overflow: scroll;
+  position: fixed;
+}
+.navSideBar .trackCard {
+  width: 100%;
+  margin: 0px;
+  justify-content: flex-start;
+}
+.navSideBar .trackCard i {
+  padding: 10px 0px;
+}
+
+#toggle {
+  position: absolute;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  left: 300px;
+  top: 40%;
+  z-index: 2;
+}
+
+label i {
+  z-index: 5;
+  color: #6e6e6e;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+}
+
+#toggle + label {
+  position: absolute;
+  top: 40%;
+  left: 265px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  background-color: white;
+  transition: left 500ms ease;
+  content: " ";
+  cursor: pointer;
+}
+
+#toggle:checked ~ .sideBarWrapper {
+  left: -300px;
+}
+
+#toggle:checked + label {
+  left: -35px;
+}
+
+#toggle::not(:checked) ~ .lessonContentWrapper {
+  margin-left: 300px;
+}
+
+.weekModules, .dayModules {
+  display: none;
+}
+
+.programModules {
+  cursor: pointer;
+  padding-left: 10px;
+}
+.programModules .programModules > li, .programModules .weekModules > li, .programModules .dayModules > li {
+  list-style-type: none;
+}
+
+.programModules li {
+  color: #6e6e6e;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding-top: 3px;
+}
+
+.weekModules {
+  padding-bottom: 10px;
+  padding-left: 0px;
+}
+.weekModules li {
+  font-size: 0.9em;
+  font-weight: lighter;
+  color: #888888;
+  padding-top: 4px;
+}
+
+.dayModules {
+  margin-left: 20px;
+  padding-top: 13px;
+  padding-bottom: 12px;
+}
+.dayModules > li {
+  padding: 2px;
+  background-color: #f7f7f7;
+  border: none;
+  border-radius: 3px;
+  width: 100px;
+  text-align: center;
+}
+
+.lessons {
+  padding-left: 0px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  font-size: 0.8em;
+  font-style: normal;
+  transform: translate(-15%, 0);
+  width: 225px;
+}
+
+.lessonContent {
+  background-color: white;
+  max-width: 600px;
+  height: 100%;
+  margin-top: 50px;
+}
+
+.lessonContentWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=output.css.map */

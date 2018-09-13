@@ -1,0 +1,259 @@
+
+$gradientWhite: #FFF9F9;
+$gradientDark: #E6E5E5;
+$buttonBorderGray: #EEE8E8;
+$fontBlack: #484848;
+
+
+@mixin cardStyle ($trackColor) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  height: 150px;
+  width: 250px;
+  margin: 10px 10px;
+  & > div:first-child{
+    padding: 5px;
+    width: 100%;
+    background-color: $trackColor;
+    font-weight: bold;
+  }
+    & > div:nth-child(2) {
+      padding: 10px;
+    }
+  & > div:nth-child(3) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    & > div:last-child {
+      font-weight: bold;
+    }
+  }
+}
+
+body{
+background-color: #F5F5F5;
+color: $fontBlack;
+}
+
+.navBar {
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 40px;
+  i{
+    padding: 10px;
+    color: lighten($fontBlack, 50%);
+    font-size: 1.4rem;
+  }
+}
+
+a {
+  color: $fontBlack;
+}
+
+a:hover {
+  text-decoration: none;
+  color: lighten($fontBlack, 30%);
+}
+
+button {
+  border: 1px solid $buttonBorderGray;
+  background-image: linear-gradient($gradientWhite, $gradientDark);
+}
+
+i {
+  color: white;
+  margin: 0 6px;
+}
+
+.contentWrapper {
+  max-width: 810px;
+  margin: 0px auto;
+}
+
+#learnTitleStyle {
+  margin-top: 20px;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.trackCards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  .purple {
+    @include cardStyle(#D6D3FF);
+  }
+  .lightGreen {
+    @include cardStyle(#D0FFD5);
+  }
+  .darkGreen {
+    @include cardStyle(#74B29A);
+  }
+  .lightBrown {
+    @include cardStyle(#C7BBA5);
+  }
+  .darkBrown {
+    @include cardStyle(#B19C87);
+  }
+}
+
+.subheading {
+  display: inline-block;
+  margin: 10px;
+  margin-top: 30px;
+}
+
+.sideBarWrapper{
+  position: relative;
+  top:100%;
+  left:0px;
+  transition: left 500ms ease;
+  position: fixed;
+  top:40px;
+  height: 100%;
+  width: 300px;
+  z-index: 1;
+}
+
+.navSideBar {
+  background-color: white;
+  width: 300px;
+  height: 100%;
+  z-index:1;
+  overflow: scroll;
+  position: fixed;
+  .trackCard {
+    width: 100%;
+    margin: 0px;
+    justify-content: flex-start;
+    i {
+      padding: 10px 0px;
+    }
+  }
+}
+
+#toggle{
+  position: absolute;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  left:300px;
+  top:40%;
+  z-index: 2;
+}
+
+label i {
+  z-index: 5;
+  color: lighten($fontBlack, 15%);
+  position: absolute;
+  top: 40%;
+  left: 50%;
+}
+
+#toggle + label {
+  position: absolute;
+  top: 40%;
+  left: 265px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  background-color: white;
+  transition: left 500ms ease;
+  content: " ";
+  cursor: pointer;
+}
+
+
+#toggle:checked ~ .sideBarWrapper{
+  left: -300px;
+}
+#toggle:checked + label{
+  left: -35px;
+}
+#toggle::not(:checked) ~ .lessonContentWrapper{
+  margin-left: 300px;
+}
+
+.weekModules, .dayModules {
+  display: none;
+}
+
+.programModules {
+  cursor: pointer;
+    padding-left: 10px;
+    .programModules, .weekModules, .dayModules{
+    & > li {
+      list-style-type: none;
+    }
+  }
+}
+
+.programModules li {
+  color: lighten($fontBlack, 15%);
+  font-size: 1.1em;
+  font-weight: bold;
+  padding-top: 3px;
+  }
+
+.weekModules {
+  padding-bottom: 10px;
+  padding-left: 0px;
+  li {
+    font-size: .9em;
+    font-weight: lighter;
+    color: lighten($fontBlack, 25%);
+    padding-top: 4px;
+    // transform: translate(-15%, 0);
+  }
+}
+
+.dayModules {
+  // transform: translate(10%, 0);
+  margin-left: 20px;
+  padding-top: 13px;
+  padding-bottom: 12px;
+
+  & > li {
+    padding: 2px;
+    background-color: darken(white, 3%);
+    border: none;
+    border-radius: 3px;
+    width: 100px;
+    text-align: center;
+  }
+}
+
+.lessons {
+padding-left: 0px;
+padding-top: 10px;
+padding-bottom: 15px;
+font-size: .8em;
+font-style: normal;
+transform: translate(-15%, 0);
+width: 225px;
+}
+
+.lessonContent {
+  background-color: white;
+  max-width: 600px;
+  height: 100%;
+  margin-top: 50px;
+  // div {
+  // display: none;
+  // }
+}
+
+.lessonContentWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
