@@ -1,272 +1,139 @@
 
-$gradientWhite: #FFF9F9;
-$gradientDark: #E6E5E5;
-$buttonBorderGray: #EEE8E8;
-$fontBlack: #484848;
 
-
-@mixin cardStyle ($trackColor) {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: white;
-  height: 150px;
-  width: 250px;
-  margin: 10px 10px;
-  & > div:first-child{
-    padding: 5px;
-    width: 100%;
-    background-color: $trackColor;
-    font-weight: bold;
-  }
-    & > div:nth-child(2) {
-      padding: 10px;
-    }
-  & > div:nth-child(3) {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px;
-    & > div:last-child {
-      font-weight: bold;
-    }
-  }
-}
-
-body{
-background-color: #F5F5F5;
-color: $fontBlack;
-}
-
-.navBar {
-  position: fixed;
+.topBanner {
+  height: 100px;
   width: 100%;
-  background-color: white;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 40px;
-  top: 0;
-  i{
-    padding: 10px;
-    color: lighten($fontBlack, 50%);
-    font-size: 1.4rem;
-  }
-}
-
-.progress {
-  position: relative;
-  width: 50%;
-  height: 20px;
-  margin-left: 300px;
-}
-
-a {
-  color: $fontBlack;
-}
-
-a:hover {
-  text-decoration: none;
-  color: lighten($fontBlack, 30%);
-}
-
-button {
-  border: 1px solid $buttonBorderGray;
-  background-image: linear-gradient($gradientWhite, $gradientDark);
-}
-
-i {
+  background-color: black;
   color: white;
-  margin: 0 6px;
-}
-
-.contentWrapper {
-  max-width: 810px;
-  margin: 0px auto;
-}
-
-#learnTitleStyle {
-  margin-top: 70px;
-  font-size: 3em;
-  font-weight: bold;
-}
-
-.trackCards {
+  text-transform: uppercase;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  .purple {
-    @include cardStyle(#D6D3FF);
-  }
-  .lightGreen {
-    @include cardStyle(#D0FFD5);
-  }
-  .darkGreen {
-    @include cardStyle(#74B29A);
-  }
-  .lightBrown {
-    @include cardStyle(#C7BBA5);
-  }
-  .darkBrown {
-    @include cardStyle(#B19C87);
-  }
-}
-
-.subheading {
-  display: inline-block;
-  margin: 10px;
-  margin-top: 30px;
-}
-
-.sideBarWrapper{
-  position: relative;
-  top:100%;
-  left:0px;
-  transition: left 500ms ease;
-  position: fixed;
-  top:40px;
-  height: 100%;
-  width: 300px;
-  z-index: 1;
-}
-
-.navSideBar {
-  background-color: white;
-  width: 300px;
-  height: 100%;
-  z-index:1;
-  overflow: scroll;
-  position: fixed;
-  .trackCard {
-    width: 100%;
-    margin: 0px;
-    justify-content: flex-start;
-    i {
-      padding: 10px 0px;
-    }
-  }
-}
-
-
-#toggle{
-  position: absolute;
-  appearance: none;
-  -webkit-appearance: none;
-  cursor: pointer;
-  left:300px;
-  top:40%;
-  z-index: 2;
-}
-
-label i {
-  z-index: 5;
-  color: lighten($fontBlack, 15%);
-  position: absolute;
-  top: 40%;
-  left: 50%;
-}
-
-#toggle + label {
-  position: absolute;
-  top: 40%;
-  left: 265px;
-  width: 70px;
-  height: 70px;
-  border-radius: 50px;
-  background-color: white;
-  transition: left 500ms ease;
-  content: " ";
-  cursor: pointer;
-}
-
-
-#toggle:checked ~ .sideBarWrapper{
-  left: -300px;
-}
-#toggle:checked + label{
-  left: -35px;
-}
-#toggle:not(:checked) ~ .lessonContentWrapper{
-  margin-left: 300px;
-}
-
-.weekModules, .dayModules {
-  display: none;
-}
-
-.programModules {
-  cursor: pointer;
-    padding-left: 10px;
-    .programModules, .weekModules, .dayModules{
-    & > li {
-      list-style-type: none;
-    }
-  }
-}
-
-.programModules li {
-  color: lighten($fontBlack, 15%);
-  font-size: 1.1em;
-  font-weight: bold;
-  padding-top: 3px;
-  }
-
-.weekModules {
-  padding-bottom: 10px;
-  padding-left: 0px;
-  li {
-    font-size: .9em;
-    font-weight: lighter;
-    color: lighten($fontBlack, 25%);
-    padding-top: 4px;
-    // transform: translate(-15%, 0);
-  }
-}
-
-.dayModules {
-  // transform: translate(10%, 0);
-  margin-left: 20px;
-  padding-top: 13px;
-  padding-bottom: 12px;
-
-  & > li {
-    padding: 2px;
-    background-color: darken(white, 3%);
-    border: none;
-    border-radius: 3px;
-    width: 100px;
-    text-align: center;
-  }
-}
-
-.lessons {
-padding-left: 0px;
-padding-top: 10px;
-padding-bottom: 15px;
-font-size: .8em;
-font-style: normal;
-transform: translate(-15%, 0);
-width: 225px;
-}
-
-.lessonContent {
-  background-color: white;
-  max-width: 800px;
-  height: 100%;
-  margin-top: 50px;
-  div {
-  display: none;
-  padding: 40px 30px;
-
-  }
-}
-
-.lessonContentWrapper {
-  display: flex;
-  flex-direction: row;
   justify-content: center;
-  margin-left: 0px;
-  transition: margin-left 500ms ease;
+  align-items: center;
+}
+
+.area:nth-child(2n) {
+  background-color: gray;
+}
+
+.area:nth-child(2n-1) {
+  background-color: red;
+}
+
+.main {
+  max-width: 900px;
+  margin: 10px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense;
+  grid-gap: 20px;
+}
+
+.area {
+  min-height: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+}
+.is-visible {
+  animation: Items 600ms ease-in forwards;
+
+}
+@keyframes Items {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.one {
+  background-image: url("../img/1.jpg");
+}
+.two {
+  background-image: url("../img/2.jpg");
+}
+.three {
+  background-image: url("../img/3.jpg");
+}
+.four {
+  background-image: url("../img/4.jpg");
+}
+.five {
+  background-image: url("../img/5.jpg");
+}
+.six {
+  background-image: url("../img/6.jpg");
+}
+.seven {
+  background-image: url("../img/7.jpg");
+}
+.eight {
+  background-image: url("../img/8.jpg");
+}
+.nine {
+  background-image: url("../img/9.jpg");
+}
+.ten {
+  background-image: url("../img/10.jpg");
+}
+
+.area:nth-child(1) {
+  grid-column: span 2;
+}
+
+.area:nth-child(2) {
+  grid-row: span 3;
+  grid-column: span 3;
+}
+
+.area:nth-child(4) {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+.area:nth-child(5) {
+  grid-column: span 3;
+}
+.area:nth-child(8) {
+  grid-row: span 2;
+}
+
+.area:nth-child(9) {
+  grid-column: span 3;
+}
+
+.area:nth-child(10) {
+  grid-column: span 3;
+}
+
+.area:nth-child(11) {
+  grid-column: span 2;
+}
+
+.area:nth-child(12) {
+  grid-row: span 3;
+  grid-column: span 3;
+}
+
+.area:nth-child(14) {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+.area:nth-child(15) {
+  grid-column: span 3;
+}
+.area:nth-child(18) {
+  grid-row: span 2;
+}
+
+.area:nth-child(19) {
+  grid-column: span 3;
+}
+
+.area:nth-child(20) {
+  grid-column: span 3;
 }

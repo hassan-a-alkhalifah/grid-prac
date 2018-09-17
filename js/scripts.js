@@ -1,20 +1,34 @@
+// $(".area").each(function(index) {
+//   setTimeout(function() {
+//     $(".area").eq(i).addClass("is-visible");
+//   }, 200 * i);
+// });
 
-$(document).ready(function(){
-  $("li").click(function(){
-    $(this).next("ul").toggle();
-  })
-  $(".svgDiv,.svgDivHidden").click(function(){
-    $(".sideBarWrapper").toggle();
-  })
-  $(".lessons li").click(function(){
-    $(".lessonContent div").hide();
-    var clickValue = '.' + this.className;
-    console.log(clickValue);
-    $(clickValue).show();
-    var progLength = parseInt($(this).siblings().length) + 1
+// $('.area').each(function(i){
+//   setTimeout(function(){
+//     $('.area').eq(i).addClass('is-visible');
+//   }, 200);
+// });
 
-    var progBarFill = 100/progLenth * i
-    $(".progress").html(' <div class="progress-bar bg-info" role="progressbar" style="width: 25%" <span aria-valuenow="' + progBarFill + '" aria-valuemin="0" aria-valuemax="100"></div>')
-  })
+function displayOnTimeout(classExtension) {
+  if (classExtension < 11) {
+    setTimeout(function(){
+      $('.area' + classExtension).addClass('is-visible');
+      displayOnTimeout(classExtension + 1);
+    }, 500);
+  }
+}
 
-})
+$(document).ready(function() {
+  // for(var i = 1; i < 3; i++) {
+  //   setTimeout(function(){
+  //     console.log('here');
+  //     $('.area' + i).addClass('is-visible');
+  //     console.log(i);
+  //   }, 20 * i);
+  // }
+  displayOnTimeout(0);
+
+
+
+});
